@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZP</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>ZP   MESSAGES FOR PROJECT SYSTEMS</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZP</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>FISCAL YEAR must be LE &apos; &amp; &apos;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZP</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>PLEASE SELECT FORM OF REPORT: &amp; or &amp;</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZP</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>DIVISION NUMBER MUST HAVE FOLLOWING FORMAT: &apos;01&apos;,&apos;02&apos;,...&apos;10&apos;...</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZP</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Select One Report Only</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZP</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

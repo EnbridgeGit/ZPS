@@ -1,0 +1,321 @@
+REPORT ZPSRR001A NO STANDARD PAGE HEADING LINE-COUNT 64 LINE-SIZE 132.
+************************************************************************
+*  AUTHOR:      MOHAMMAD KHAN.
+*  DATE:        JUNE 2003.
+*  Description:
+*     - The purpose of this program is to produce report for
+*        SUMMARY OF PROJECT PLANS. This program is a copy of
+*        ZPSRR001 with major changes to DB access and logic.
+*
+*Changes:
+*
+*Issue: Date:   By:            Description:
+*
+********************************************************************
+TABLES: COSP,  "CO Object:  Cost Totals - External Postings
+        PROJ,  "Project Definition
+        PRPS,  "WBS (Work Breakdown Structure) Element Master Data
+        TCJ1T. "Project Types
+
+DATA:   PLAN     LIKE COSP-KSTAR VALUE '0000480199',  "Plan Cost Element
+        IDC      LIKE COSP-KSTAR VALUE '0000324102',  "IDC  Cost Element
+        PROCEEDS LIKE COSP-KSTAR VALUE '0000430025',  "Proc Cost Element
+        FIRST(2) TYPE N VALUE '01',                   "Month periods
+        LAST(2)  TYPE N VALUE '12',                   "Month Periods
+        PL_AMT   LIKE COSP-WKG001,                    "Calculation field
+        IDC_AMT  LIKE COSP-WKG001,
+        PROC_AMT LIKE COSP-WKG001,
+        TOTAL    LIKE COSP-WKG001,
+        S_PL     LIKE COSP-WKG001,
+        S_IDC    LIKE COSP-WKG001,
+        S_PROC   LIKE COSP-WKG001,
+        S_TOT    LIKE COSP-WKG001,
+        TOT_PL   LIKE COSP-WKG001,
+        TOT_IDC  LIKE COSP-WKG001,
+        TOT_PROC LIKE COSP-WKG001,
+        SUB_TOT  LIKE COSP-WKG001,
+        GR_PL    LIKE COSP-WKG001,
+        GR_IDC   LIKE COSP-WKG001,
+        GR_PROC  LIKE COSP-WKG001,
+        GR_TOT   LIKE COSP-WKG001.
+RANGES: IN_KSTAR FOR COSP-KSTAR.
+
+* Table for control-break processing.
+DATA:  BEGIN OF MAINTAB OCCURS 10000,
+         PRART  LIKE TCJ1T-PRART,                     "Project Type
+         DIV    LIKE PRPS-POSID,                      "Division
+         WBS    LIKE PRPS-POSID,                      "WBS element
+         GJAHR  LIKE COSP-GJAHR,                      "Fiscal Year
+
+* Monthly values set a side for Planning cost elements
+         PLAN01 LIKE COSP-WKG001,                     "Jan
+         PLAN02 LIKE COSP-WKG002,                     "Feb
+         PLAN03 LIKE COSP-WKG003,                     "Mar
+         PLAN04 LIKE COSP-WKG004,                     "Apr
+         PLAN05 LIKE COSP-WKG005,                     "May
+         PLAN06 LIKE COSP-WKG006,                     "Jun
+         PLAN07 LIKE COSP-WKG007,                     "Jul
+         PLAN08 LIKE COSP-WKG008,                     "Aug
+         PLAN09 LIKE COSP-WKG009,                     "Sep
+         PLAN10 LIKE COSP-WKG010,                     "Oct
+         PLAN11 LIKE COSP-WKG011,                     "Nov
+         PLAN12 LIKE COSP-WKG012,                     "Dec
+
+* Monthly values set a side for IDC cost elements
+         IDC001 LIKE COSP-WKG001,
+         IDC002 LIKE COSP-WKG002,
+         IDC003 LIKE COSP-WKG003,
+         IDC004 LIKE COSP-WKG004,
+         IDC005 LIKE COSP-WKG005,
+         IDC006 LIKE COSP-WKG006,
+         IDC007 LIKE COSP-WKG007,
+         IDC008 LIKE COSP-WKG008,
+         IDC009 LIKE COSP-WKG009,
+         IDC010 LIKE COSP-WKG010,
+         IDC011 LIKE COSP-WKG011,
+         IDC012 LIKE COSP-WKG012,
+
+* Monthly values set a side for Proceeds cost elements
+         PROC01 LIKE COSP-WKG001,
+         PROC02 LIKE COSP-WKG002,
+         PROC03 LIKE COSP-WKG003,
+         PROC04 LIKE COSP-WKG004,
+         PROC05 LIKE COSP-WKG005,
+         PROC06 LIKE COSP-WKG006,
+         PROC07 LIKE COSP-WKG007,
+         PROC08 LIKE COSP-WKG008,
+         PROC09 LIKE COSP-WKG009,
+         PROC10 LIKE COSP-WKG010,
+         PROC11 LIKE COSP-WKG011,
+         PROC12 LIKE COSP-WKG012,
+   END OF MAINTAB.
+
+SELECTION-SCREEN BEGIN OF BLOCK BEGIN WITH FRAME.
+
+PARAMETERS: P_VBUKR LIKE PROJ-VBUKR MODIF ID ABC OBLIGATORY   "Company
+                                    DEFAULT 'UGL'.
+SELECT-OPTIONS:
+            S_VERNR FOR PROJ-VERNR MODIF ID ABC,              "Division
+            S_PROJ FOR PRPS-POSID MODIF ID ABC,               "Projects
+            S_TYPE FOR PRPS-PRART MODIF ID ABC.               "Type
+PARAMETERS: P_VERSN LIKE TKA09-VERSN OBLIGATORY DEFAULT '000' "Version
+                    MODIF ID ABC,
+            P_YEAR  LIKE COSP-GJAHR DEFAULT SY-DATUM(4)       "Year
+                    OBLIGATORY MODIF ID ABC.
+SELECTION-SCREEN END OF BLOCK BEGIN.
+
+************************************************************************
+
+START-OF-SELECTION.
+ PERFORM INITIALIZE.
+ PERFORM GET_PROJ.
+ PERFORM WRITE_DATA.
+ PERFORM FINAL.
+END-OF-SELECTION.
+
+* This routine initializes the internal tables.
+FORM INITIALIZE.
+ REFRESH: MAINTAB.
+ CLEAR:   MAINTAB.
+ IN_KSTAR-SIGN   = 'I'.
+ IN_KSTAR-OPTION = 'EQ'.
+ IN_KSTAR-LOW    = '0000324102'.
+ APPEND IN_KSTAR.
+ CLEAR  IN_KSTAR.
+ IN_KSTAR-SIGN   = 'I'.
+ IN_KSTAR-OPTION = 'EQ'.
+ IN_KSTAR-LOW    = '0000430025'.
+ APPEND IN_KSTAR.
+ CLEAR  IN_KSTAR.
+ IN_KSTAR-SIGN   = 'I'.
+ IN_KSTAR-OPTION = 'EQ'.
+ IN_KSTAR-LOW    = '0000480199'.
+ APPEND IN_KSTAR.
+ CLEAR  IN_KSTAR.
+
+ENDFORM.
+
+* This routine gathers the project description.
+FORM GET_PROJ.
+
+ SELECT PRPS~PRART PRPS~VERNR PRPS~POSID COSP~KSTAR COSP~GJAHR
+        COSP~WKG001 COSP~WKG002 COSP~WKG003 COSP~WKG004
+        COSP~WKG005 COSP~WKG006 COSP~WKG007 COSP~WKG008
+        COSP~WKG009 COSP~WKG010 COSP~WKG011 COSP~WKG012
+ INTO  (PRPS-PRART, PRPS-VERNR, PRPS-POSID, COSP-KSTAR, COSP-GJAHR,
+        COSP-WKG001, COSP-WKG002, COSP-WKG003, COSP-WKG004,
+        COSP-WKG005, COSP-WKG006, COSP-WKG007, COSP-WKG008,
+        COSP-WKG009, COSP-WKG010, COSP-WKG011, COSP-WKG012)
+ FROM ( PRPS INNER JOIN COSP
+          ON PRPS~OBJNR = COSP~OBJNR )
+ WHERE  PRPS~POSID  IN  S_PROJ
+   AND  PRPS~VERNR  IN  S_VERNR
+   AND  PRPS~PBUKR  =   P_VBUKR
+   AND  PRPS~PRART  IN  S_TYPE
+   AND  COSP~KSTAR  IN  IN_KSTAR
+   AND  COSP~GJAHR  =   P_YEAR
+   AND  COSP~VERSN  =   P_VERSN
+   AND  COSP~WRTTP  =   '01'.
+
+
+   IF SY-SUBRC = 0.
+      MOVE:  PRPS-POSID  TO MAINTAB-WBS,
+             '0000'      TO MAINTAB-WBS+7(4),  "Turns WBS into projects
+             PRPS-PRART  TO MAINTAB-PRART,
+             PRPS-VERNR  TO MAINTAB-DIV,
+             COSP-GJAHR  TO MAINTAB-GJAHR.
+      PERFORM POP_PLAN.
+      COLLECT MAINTAB.
+      CLEAR   MAINTAB.
+   ENDIF.
+ ENDSELECT.
+ENDFORM.
+
+* This routine process the data and writes the output.
+FORM WRITE_DATA.
+ SORT MAINTAB BY PRART DIV WBS.
+ LOOP AT MAINTAB.
+  AT NEW PRART.                        "Control break - Project type
+     SELECT SINGLE * FROM TCJ1T WHERE PRART = MAINTAB-PRART
+                                      AND LANGU = SY-LANGU.
+     ULINE: /1.
+     FORMAT COLOR COL_NEGATIVE ON.
+     WRITE: /1 SY-VLINE, 2 TEXT-007, 13 TCJ1T-PRATX(22), 54 SY-VLINE.
+     FORMAT COLOR COL_NEGATIVE OFF.
+     ULINE: /1(54).
+     FORMAT COLOR COL_GROUP ON.
+     FORMAT INTENSIFIED OFF.
+     WRITE: /1 TEXT-008, 13 TEXT-009, 56 TEXT-010, 80 TEXT-011,
+          100 TEXT-012, 125 TEXT-013.
+     FORMAT INTENSIFIED ON.
+     FORMAT COLOR COL_GROUP OFF.
+     SKIP 1.
+  ENDAT.
+
+     ADD MAINTAB-PLAN01 FROM FIRST TO LAST GIVING PL_AMT.
+     ADD MAINTAB-IDC001 FROM FIRST TO LAST GIVING IDC_AMT.
+     ADD MAINTAB-PROC01 FROM FIRST TO LAST GIVING PROC_AMT.
+     TOTAL     = PL_AMT + IDC_AMT + PROC_AMT.
+     TOT_PL    = TOT_PL + PL_AMT.
+     TOT_IDC   = TOT_IDC + IDC_AMT.
+     TOT_PROC  = TOT_PROC + PROC_AMT.
+     S_TOT     = S_TOT + TOTAL.
+     S_PL      = S_PL + PL_AMT.
+     S_IDC     = S_IDC + IDC_AMT.
+     S_PROC    = S_PROC + PROC_AMT.
+*     IF TOTAL  = 0.
+*        CONTINUE.
+*     ENDIF.
+     IF TOTAL <> 0.
+     SELECT SINGLE * FROM PROJ WHERE PSPID = MAINTAB-WBS.
+     FORMAT COLOR 4 ON INTENSIFIED OFF.
+     WRITE: /2 MAINTAB-WBS, 13 PROJ-POST1.
+     FORMAT COLOR 4 OFF INTENSIFIED ON.
+     FORMAT COLOR 2 ON INTENSIFIED OFF.
+     WRITE: 44 PL_AMT DECIMALS 0, 66 IDC_AMT DECIMALS 0,
+            88 PROC_AMT DECIMALS 0, 110 TOTAL DECIMALS 0.
+     FORMAT COLOR 2 OFF INTENSIFIED ON.
+     CLEAR: TOTAL, PL_AMT, IDC_AMT, PROC_AMT.
+     ENDIF.
+  AT END OF DIV.
+     FORMAT COLOR COL_TOTAL ON INTENSIFIED OFF.
+     WRITE: /4 TEXT-015, MAINTAB-DIV+6(2), TEXT-016,
+     44 S_PL DECIMALS 0, 66 S_IDC DECIMALS 0,
+     88 S_PROC DECIMALS 0, 110 S_TOT DECIMALS 0.
+     FORMAT COLOR COL_NEGATIVE OFF.
+     CLEAR: S_PL, S_IDC, S_PROC, S_TOT.
+     FORMAT COLOR COL_TOTAL OFF INTENSIFIED ON.
+  ENDAT.
+
+  AT END OF PRART.                        "Control break - project type
+     RESERVE 6 LINES.
+     SKIP 1.
+     WRITE: /1 SY-ULINE.
+     SUB_TOT = TOT_PL + TOT_IDC + TOT_PROC.
+     GR_PL   = GR_PL + TOT_PL.
+     GR_IDC  = GR_IDC + TOT_IDC.
+     GR_PROC = GR_PROC + TOT_PROC.
+     GR_TOT  = GR_TOT + SUB_TOT.
+     FORMAT COLOR COL_NEGATIVE ON.
+     WRITE: /4 TEXT-013, 13 TCJ1T-PRATX, 43 SY-VLINE,
+     44 TOT_PL DECIMALS 0, 66 TOT_IDC DECIMALS 0,
+     88 TOT_PROC DECIMALS 0, 110 SUB_TOT DECIMALS 0.
+     FORMAT COLOR COL_NEGATIVE OFF.
+     CLEAR: TOT_PL, TOT_IDC, TOT_PROC, SUB_TOT.
+  ENDAT.
+ ENDLOOP.
+ENDFORM.
+
+* This routine writes the final/Grand totals.
+FORM FINAL.
+ RESERVE 6 LINES.
+ WRITE: /43 SY-VLINE, 44 SY-ULINE.
+ FORMAT COLOR COL_TOTAL ON.
+ WRITE: /1 TEXT-017, 43 SY-VLINE.
+ WRITE: 44 GR_PL DECIMALS 0, 66 GR_IDC DECIMALS 0,
+        88 GR_PROC DECIMALS 0, 110 GR_TOT DECIMALS 0.
+ FORMAT COLOR COL_TOTAL OFF.
+ WRITE: /43 SY-VLINE, 44 SY-ULINE.
+ENDFORM.
+
+* This routine populates the maintab table with the planning values.
+FORM POP_PLAN.
+ CLEAR TOTAL.
+ ADD COSP-WKG001 FROM 1 TO 12 GIVING TOTAL.
+ IF TOTAL NE 0.
+    IF COSP-KSTAR = PLAN.                          "Planning
+       MOVE: COSP-GJAHR  TO MAINTAB-GJAHR,
+             COSP-WKG001 TO MAINTAB-PLAN01,
+             COSP-WKG002 TO MAINTAB-PLAN02,
+             COSP-WKG003 TO MAINTAB-PLAN03,
+             COSP-WKG004 TO MAINTAB-PLAN04,
+             COSP-WKG005 TO MAINTAB-PLAN05,
+             COSP-WKG006 TO MAINTAB-PLAN06,
+             COSP-WKG007 TO MAINTAB-PLAN07,
+             COSP-WKG008 TO MAINTAB-PLAN08,
+             COSP-WKG009 TO MAINTAB-PLAN09,
+             COSP-WKG010 TO MAINTAB-PLAN10,
+             COSP-WKG011 TO MAINTAB-PLAN11,
+             COSP-WKG012 TO MAINTAB-PLAN12.
+    ELSEIF  COSP-KSTAR = IDC.                             "I.D.C.
+       MOVE: COSP-GJAHR  TO MAINTAB-GJAHR,
+             COSP-WKG001 TO MAINTAB-IDC001,
+             COSP-WKG002 TO MAINTAB-IDC002,
+             COSP-WKG003 TO MAINTAB-IDC003,
+             COSP-WKG004 TO MAINTAB-IDC004,
+             COSP-WKG005 TO MAINTAB-IDC005,
+             COSP-WKG006 TO MAINTAB-IDC006,
+             COSP-WKG007 TO MAINTAB-IDC007,
+             COSP-WKG008 TO MAINTAB-IDC008,
+             COSP-WKG009 TO MAINTAB-IDC009,
+             COSP-WKG010 TO MAINTAB-IDC010,
+             COSP-WKG011 TO MAINTAB-IDC011,
+             COSP-WKG012 TO MAINTAB-IDC012.
+  ELSE.
+       MOVE: COSP-WKG001 TO MAINTAB-PROC01,
+             COSP-WKG002 TO MAINTAB-PROC02,
+             COSP-WKG003 TO MAINTAB-PROC03,
+             COSP-WKG004 TO MAINTAB-PROC04,
+             COSP-WKG005 TO MAINTAB-PROC05,
+             COSP-WKG006 TO MAINTAB-PROC06,
+             COSP-WKG007 TO MAINTAB-PROC07,
+             COSP-WKG008 TO MAINTAB-PROC08,
+             COSP-WKG009 TO MAINTAB-PROC09,
+             COSP-WKG010 TO MAINTAB-PROC10,
+             COSP-WKG011 TO MAINTAB-PROC11,
+             COSP-WKG012 TO MAINTAB-PROC12.
+    ENDIF.
+ ENDIF.
+ENDFORM.
+
+* This event is used to display the main headings.
+TOP-OF-PAGE.
+ FORMAT COLOR COL_NORMAL ON.
+ WRITE: /1 SY-ULINE.
+ WRITE: /2 TEXT-001,12 SY-REPID, SY-SYSID,
+        57 TEXT-002,113 TEXT-003,129 SY-PAGNO.
+ WRITE: /1 TEXT-004,12 SY-UZEIT, 63 TEXT-005, 112 TEXT-006,122 SY-DATUM.
+ WRITE: /59 TEXT-014, 67 P_VERSN, 70 ',', 72 P_YEAR(4).
+ WRITE: /1 TEXT-018, P_VBUKR.
+ ULINE: /1.
+ FORMAT COLOR COL_NORMAL OFF.

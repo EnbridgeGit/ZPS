@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_VIEW" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD25V>
+    <VIEWNAME>ZPLM_ORGACTIVE</VIEWNAME>
+    <AS4LOCAL>A</AS4LOCAL>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <AGGTYPE>V</AGGTYPE>
+    <ROOTTAB>ZPLM_ORG</ROOTTAB>
+    <DDTEXT>Audit Organization Active</DDTEXT>
+    <VIEWCLASS>D</VIEWCLASS>
+    <VIEWGRANT>R</VIEWGRANT>
+   </DD25V>
+   <DD26V_TABLE>
+    <DD26V>
+     <VIEWNAME>ZPLM_ORGACTIVE</VIEWNAME>
+     <TABNAME>ZPLM_ORG</TABNAME>
+     <TABPOS>0001</TABPOS>
+     <FORTABNAME>ZPLM_ORG</FORTABNAME>
+    </DD26V>
+   </DD26V_TABLE>
+   <DD27P_TABLE>
+    <DD27P>
+     <VIEWFIELD>ORGID</VIEWFIELD>
+     <TABNAME>ZPLM_ORG</TABNAME>
+     <FIELDNAME>ORGID</FIELDNAME>
+     <KEYFLAG>X</KEYFLAG>
+    </DD27P>
+    <DD27P>
+     <VIEWFIELD>ORGNAME</VIEWFIELD>
+     <TABNAME>ZPLM_ORG</TABNAME>
+     <FIELDNAME>ORGNAME</FIELDNAME>
+     <KEYFLAG>X</KEYFLAG>
+    </DD27P>
+   </DD27P_TABLE>
+   <DD28V_TABLE>
+    <DD28V>
+     <CONDNAME>ZPLM_ORGACTIVE</CONDNAME>
+     <POSITION>0001</POSITION>
+     <TABNAME>ZPLM_ORG</TABNAME>
+     <FIELDNAME>DISABLE</FIELDNAME>
+     <OPERATOR>NE</OPERATOR>
+     <CONSTANTS>&apos;X&apos;</CONSTANTS>
+    </DD28V>
+   </DD28V_TABLE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

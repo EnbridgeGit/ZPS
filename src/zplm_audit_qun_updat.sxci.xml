@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SXCI" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SXCI>
+    <IMPLEMENTATION_DATA>
+     <IMP_NAME>ZPLM_AUDIT_QUN_UPDAT</IMP_NAME>
+     <TEXT>Audit Management - QuestionEnhancements on Create/Change</TEXT>
+     <IMP_CLASS>ZCL_IM_PLM_AUDIT_QUN_UPDAT</IMP_CLASS>
+     <EXIT_NAME>PLM_AUDIT_QUN_UPDATE</EXIT_NAME>
+     <INTER_NAME>IF_EX_PLM_AUDIT_QUN_UPDATE</INTER_NAME>
+     <ACTIVE>X</ACTIVE>
+    </IMPLEMENTATION_DATA>
+   </SXCI>
+  </asx:values>
+ </asx:abap>
+</abapGit>

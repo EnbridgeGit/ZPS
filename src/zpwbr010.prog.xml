@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PROG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROGDIR>
+    <NAME>ZPWBR010</NAME>
+    <SUBC>1</SUBC>
+    <APPL>A</APPL>
+    <RLOAD>E</RLOAD>
+    <FIXPT>X</FIXPT>
+    <LDBNAME>D$S</LDBNAME>
+   </PROGDIR>
+   <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>ZPWBR010</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0003</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00047</TXTLINES>
+      <DOKSTATE>E</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZPWBR010</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00003</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;DESCRIPTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The purpose of this program is to create Capital Expenditure Report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>For the same input, there are two forms of report available:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>generic: report is sorted by Project Type, Proirity and WBS elements</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>by division: report is sorted by division, and then within division by</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Project Type, Proirity and WBS elements.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Input</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Selection screen has four parts: General Information,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Additions/Replacements, Retirements/Abandoments/Proceeds/Salvage and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Form of Report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>In the General Information part, user can accept/change Company Code</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(defaulted to &apos;UGL&apos;), Fiscal Year (default set to current year, however</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>user can enter a different year), Plan Version (defaulted to &apos;0&apos;),</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>comperative Plan Version (defaulted to &apos;0&apos;) and division (this entry is</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>only important where &apos;By Division&apos; form of report is selected.  If</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&apos;Generic&apos; form is selected, Division field does not have any bearing on</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the selection criteria).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>The entry for next two parts of the report are handled through the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>VARIANT &apos;Real Data&apos;.  For ever line visible on the entry sceen, this</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>variant contains corresponding numbers of WBS elements.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Form of Report.  At the time, only one form of report can be selected:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Generic or By Division.  In order to run the report, user must select</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>one and only one option.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Generic Form of Report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>The output is divided into two parts: Additions/Replacements and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Retirements/Abandoments/Proceeds/Salvage.  Within these parts,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>information is sorted by Project Type, Project Priority and WBS</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>element.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>For each WBS element followinfg is displayed:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>WBS element</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>description of WBS element</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>year-to-date approved plan</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>year-to-date actual costs</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>difference between actual cost and approved plan</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>total budget</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>approved budget</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>unapproved budget</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>total plan by selected version plan</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B2</TDFORMAT>
+       <TDLINE>total plan by selected copmerative version plan.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Report also shows totals by priority, project type and totals for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>report.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>By Division.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>The output is divided into two parts: Additions/Replacements and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Retirements/Abandoments/Proceeds/Salvage.  Within these parts,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>information is sorted by Division, Project Type, Priority and WBS</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>elements.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Columns arrangements is identical as for Gereric Form of Report. Totals</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>are shown by priority, project type, division, and report.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

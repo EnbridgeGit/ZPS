@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Function group for PS programs</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>SAPLZPS1</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>Z_GET_PROJ_FINAL_STATUS</FUNCNAME>
+     <SHORT_TEXT>FUNCTION GROUP FOR AM/PS</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IOBJNR</PARAMETER>
+       <DBFIELD>PRPS-OBJNR</DBFIELD>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>OSTATUS</PARAMETER>
+       <DBFIELD>JCDS-STAT</DBFIELD>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IOBJNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Object number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OSTATUS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>PROJECT FINAL STATUS</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

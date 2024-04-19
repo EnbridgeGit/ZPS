@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PROG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROGDIR>
+    <NAME>ZPSZ9000</NAME>
+    <DBAPL>S</DBAPL>
+    <DBNA>D$</DBNA>
+    <SUBC>1</SUBC>
+    <APPL>K</APPL>
+    <RLOAD>E</RLOAD>
+    <FIXPT>X</FIXPT>
+    <LDBNAME>D$S</LDBNAME>
+   </PROGDIR>
+   <TPOOL>
+    <item>
+     <ID>H</ID>
+     <KEY>001</KEY>
+    </item>
+    <item>
+     <ID>H</ID>
+     <KEY>002</KEY>
+    </item>
+    <item>
+     <ID>H</ID>
+     <KEY>003</KEY>
+    </item>
+    <item>
+     <ID>H</ID>
+     <KEY>004</KEY>
+     <ENTRY>Company Code       Asset Number</ENTRY>
+     <LENGTH>31</LENGTH>
+    </item>
+    <item>
+     <ID>R</ID>
+     <ENTRY>Update Company Code in table Z9000</ENTRY>
+     <LENGTH>34</LENGTH>
+    </item>
+    <item>
+     <ID>T</ID>
+     <ENTRY>Update Tabel Z9000 with Company Code - C McCoy</ENTRY>
+     <LENGTH>46</LENGTH>
+    </item>
+   </TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

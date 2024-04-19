@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TRAN" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TSTC>
+    <TCODE>ZINT</TCODE>
+    <PGMNA>SAPLZ_KAZB</PGMNA>
+    <DYPNO>1000</DYPNO>
+    <CINFO>BA==</CINFO>
+   </TSTC>
+   <TSTCT>
+    <SPRSL>E</SPRSL>
+    <TCODE>ZINT</TCODE>
+    <TTEXT>Project Interest Calculation</TTEXT>
+   </TSTCT>
+   <AUTHORIZATIONS>
+    <TSTCA>
+     <TCODE>ZINT</TCODE>
+     <OBJCT>C_PROJ_TCD</OBJCT>
+     <FIELD>PSARG</FIELD>
+     <VALUE>0131</VALUE>
+    </TSTCA>
+    <TSTCA>
+     <TCODE>ZINT</TCODE>
+     <OBJCT>C_PROJ_TCD</OBJCT>
+     <FIELD>TRTYP</FIELD>
+     <VALUE>V</VALUE>
+    </TSTCA>
+   </AUTHORIZATIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,1144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PROG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROGDIR>
+    <NAME>ZPCREW00</NAME>
+    <SQLX>R</SQLX>
+    <DBAPL>P</DBAPL>
+    <DBNA>PN</DBNA>
+    <CLAS>PT00</CLAS>
+    <SUBC>1</SUBC>
+    <APPL>P</APPL>
+    <RSTAT>T</RSTAT>
+    <RLOAD>E</RLOAD>
+    <FIXPT>X</FIXPT>
+    <LDBNAME>PNP</LDBNAME>
+   </PROGDIR>
+   <CUA>
+    <STA>
+     <RSMPE_STAT>
+      <CODE>ZAS1</CODE>
+      <MODAL>P</MODAL>
+      <PFKCODE>ZAS1</PFKCODE>
+      <BUTCODE>ZAS1</BUTCODE>
+     </RSMPE_STAT>
+     <RSMPE_STAT>
+      <CODE>ZASP</CODE>
+      <MODAL>P</MODAL>
+      <PFKCODE>ZASP</PFKCODE>
+      <BUTCODE>ZASP</BUTCODE>
+     </RSMPE_STAT>
+    </STA>
+    <FUN>
+     <RSMPE_FUNT>
+      <CODE>%PC</CODE>
+      <TEXTNO>01</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <FUN_TEXT>Download</FUN_TEXT>
+      <PATH>B</PATH>
+     </RSMPE_FUNT>
+     <RSMPE_FUNT>
+      <CODE>BACK</CODE>
+      <TEXTNO>01</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <FUN_TEXT>Back</FUN_TEXT>
+      <PATH>Z</PATH>
+     </RSMPE_FUNT>
+     <RSMPE_FUNT>
+      <CODE>P+</CODE>
+      <TEXTNO>01</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <FUN_TEXT>Next page</FUN_TEXT>
+      <PATH>N</PATH>
+     </RSMPE_FUNT>
+     <RSMPE_FUNT>
+      <CODE>P++</CODE>
+      <TEXTNO>01</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <FUN_TEXT>Last page</FUN_TEXT>
+      <PATH>L</PATH>
+     </RSMPE_FUNT>
+     <RSMPE_FUNT>
+      <CODE>P-</CODE>
+      <TEXTNO>01</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <FUN_TEXT>Prev.page</FUN_TEXT>
+      <PATH>V</PATH>
+     </RSMPE_FUNT>
+     <RSMPE_FUNT>
+      <CODE>P--</CODE>
+      <TEXTNO>01</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <FUN_TEXT>First page</FUN_TEXT>
+      <PATH>E</PATH>
+     </RSMPE_FUNT>
+     <RSMPE_FUNT>
+      <CODE>PF02</CODE>
+      <TEXTNO>01</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <FUN_TEXT>Choose</FUN_TEXT>
+      <PATH>A</PATH>
+     </RSMPE_FUNT>
+     <RSMPE_FUNT>
+      <CODE>PICK</CODE>
+      <TEXTNO>01</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <FUN_TEXT>Choose</FUN_TEXT>
+      <PATH>B</PATH>
+     </RSMPE_FUNT>
+     <RSMPE_FUNT>
+      <CODE>PRI</CODE>
+      <TEXTNO>01</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <FUN_TEXT>Print</FUN_TEXT>
+      <PATH>B</PATH>
+     </RSMPE_FUNT>
+     <RSMPE_FUNT>
+      <CODE>RW</CODE>
+      <TEXTNO>01</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <FUN_TEXT>Cancel</FUN_TEXT>
+      <PATH>B</PATH>
+     </RSMPE_FUNT>
+    </FUN>
+    <MEN>
+     <RSMPE_MEN>
+      <CODE>0001</CODE>
+      <NO>01</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;01&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0001</CODE>
+      <NO>02</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;02&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0001</CODE>
+      <NO>03</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;03&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0001</CODE>
+      <NO>04</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;04&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0001</CODE>
+      <NO>05</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;05&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0001</CODE>
+      <NO>06</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;06&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0001</CODE>
+      <NO>07</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;09&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0001</CODE>
+      <NO>08</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;10&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0001</CODE>
+      <NO>09</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;11&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0013</CODE>
+      <NO>01</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;12&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0013</CODE>
+      <NO>02</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;13&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0013</CODE>
+      <NO>03</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;24&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0013</CODE>
+      <NO>04</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;14&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0013</CODE>
+      <NO>05</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;17&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0013</CODE>
+      <NO>06</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;26&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0013</CODE>
+      <NO>07</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;27&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0013</CODE>
+      <NO>08</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;20&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0013</CODE>
+      <NO>09</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;22&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+     <RSMPE_MEN>
+      <CODE>0016</CODE>
+      <NO>09</NO>
+      <REF_TYPE>F</REF_TYPE>
+      <REF_CODE>&lt;23&gt;</REF_CODE>
+      <REF_NO>01</REF_NO>
+     </RSMPE_MEN>
+    </MEN>
+    <MTX>
+     <RSMPE_MNLT>
+      <CODE>0001</CODE>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <TEXT>&lt;Object&gt;</TEXT>
+     </RSMPE_MNLT>
+     <RSMPE_MNLT>
+      <CODE>0013</CODE>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <TEXT>Edit</TEXT>
+      <PATH>B</PATH>
+     </RSMPE_MNLT>
+     <RSMPE_MNLT>
+      <CODE>0016</CODE>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <TEXT>Goto</TEXT>
+      <PATH>S</PATH>
+     </RSMPE_MNLT>
+     <RSMPE_MNLT>
+      <CODE>0017</CODE>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <TEXT>Extras</TEXT>
+      <PATH>Z</PATH>
+     </RSMPE_MNLT>
+     <RSMPE_MNLT>
+      <CODE>0018</CODE>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <TEXT>Environment</TEXT>
+      <PATH>U</PATH>
+     </RSMPE_MNLT>
+     <RSMPE_MNLT>
+      <CODE>0019</CODE>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <TEXT>Settings</TEXT>
+      <PATH>E</PATH>
+     </RSMPE_MNLT>
+     <RSMPE_MNLT>
+      <CODE>0020</CODE>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <TEXT>Utilities</TEXT>
+      <PATH>M</PATH>
+     </RSMPE_MNLT>
+    </MTX>
+    <ACT>
+     <RSMPE_ACT>
+      <CODE>0001</CODE>
+      <NO>01</NO>
+      <MENUCODE>0001</MENUCODE>
+     </RSMPE_ACT>
+     <RSMPE_ACT>
+      <CODE>0001</CODE>
+      <NO>02</NO>
+      <MENUCODE>0013</MENUCODE>
+     </RSMPE_ACT>
+     <RSMPE_ACT>
+      <CODE>0001</CODE>
+      <NO>03</NO>
+      <MENUCODE>0016</MENUCODE>
+     </RSMPE_ACT>
+     <RSMPE_ACT>
+      <CODE>0001</CODE>
+      <NO>04</NO>
+      <MENUCODE>0017</MENUCODE>
+     </RSMPE_ACT>
+     <RSMPE_ACT>
+      <CODE>0001</CODE>
+      <NO>05</NO>
+      <MENUCODE>0018</MENUCODE>
+     </RSMPE_ACT>
+     <RSMPE_ACT>
+      <CODE>0001</CODE>
+      <NO>06</NO>
+      <MENUCODE>0019</MENUCODE>
+     </RSMPE_ACT>
+     <RSMPE_ACT>
+      <CODE>0001</CODE>
+      <NO>07</NO>
+      <MENUCODE>0020</MENUCODE>
+     </RSMPE_ACT>
+    </ACT>
+    <BUT>
+     <RSMPE_BUT>
+      <PFK_CODE>ZAS1</PFK_CODE>
+      <CODE>ZAS1</CODE>
+      <NO>01</NO>
+      <PFNO>03</PFNO>
+     </RSMPE_BUT>
+     <RSMPE_BUT>
+      <PFK_CODE>ZASP</PFK_CODE>
+      <CODE>1</CODE>
+      <NO>01</NO>
+      <PFNO>02</PFNO>
+     </RSMPE_BUT>
+     <RSMPE_BUT>
+      <PFK_CODE>ZASP</PFK_CODE>
+      <CODE>ZASP</CODE>
+      <NO>01</NO>
+      <PFNO>02</PFNO>
+     </RSMPE_BUT>
+     <RSMPE_BUT>
+      <PFK_CODE>ZASP</PFK_CODE>
+      <CODE>ZASP</CODE>
+      <NO>02</NO>
+      <PFNO>03</PFNO>
+     </RSMPE_BUT>
+    </BUT>
+    <PFK>
+     <RSMPE_PFK>
+      <CODE>ZAS1</CODE>
+      <PFNO>03</PFNO>
+      <FUNCODE>BACK</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZAS1</CODE>
+      <PFNO>12</PFNO>
+      <FUNCODE>RW</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZAS1</CODE>
+      <PFNO>21</PFNO>
+      <FUNCODE>P--</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZAS1</CODE>
+      <PFNO>22</PFNO>
+      <FUNCODE>P-</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZAS1</CODE>
+      <PFNO>23</PFNO>
+      <FUNCODE>P+</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZAS1</CODE>
+      <PFNO>24</PFNO>
+      <FUNCODE>P++</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZAS1</CODE>
+      <PFNO>80</PFNO>
+      <FUNCODE>P--</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZAS1</CODE>
+      <PFNO>81</PFNO>
+      <FUNCODE>P-</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZAS1</CODE>
+      <PFNO>82</PFNO>
+      <FUNCODE>P+</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZAS1</CODE>
+      <PFNO>83</PFNO>
+      <FUNCODE>P++</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZASP</CODE>
+      <PFNO>02</PFNO>
+      <FUNCODE>PF02</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZASP</CODE>
+      <PFNO>03</PFNO>
+      <FUNCODE>BACK</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZASP</CODE>
+      <PFNO>12</PFNO>
+      <FUNCODE>RW</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZASP</CODE>
+      <PFNO>21</PFNO>
+      <FUNCODE>P--</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZASP</CODE>
+      <PFNO>22</PFNO>
+      <FUNCODE>P-</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZASP</CODE>
+      <PFNO>23</PFNO>
+      <FUNCODE>P+</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZASP</CODE>
+      <PFNO>24</PFNO>
+      <FUNCODE>P++</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZASP</CODE>
+      <PFNO>80</PFNO>
+      <FUNCODE>P--</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZASP</CODE>
+      <PFNO>81</PFNO>
+      <FUNCODE>P-</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZASP</CODE>
+      <PFNO>82</PFNO>
+      <FUNCODE>P+</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+     <RSMPE_PFK>
+      <CODE>ZASP</CODE>
+      <PFNO>83</PFNO>
+      <FUNCODE>P++</FUNCODE>
+      <FUNNO>01</FUNNO>
+     </RSMPE_PFK>
+    </PFK>
+    <SET>
+     <RSMPE_STAF>
+      <STATUS>ZAS1</STATUS>
+      <FUNCTION>BACK</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>ZAS1</STATUS>
+      <FUNCTION>P+</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>ZAS1</STATUS>
+      <FUNCTION>P++</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>ZAS1</STATUS>
+      <FUNCTION>P-</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>ZAS1</STATUS>
+      <FUNCTION>P--</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>ZAS1</STATUS>
+      <FUNCTION>RW</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>ZASP</STATUS>
+      <FUNCTION>BACK</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>ZASP</STATUS>
+      <FUNCTION>P+</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>ZASP</STATUS>
+      <FUNCTION>P++</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>ZASP</STATUS>
+      <FUNCTION>P-</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>ZASP</STATUS>
+      <FUNCTION>P--</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>ZASP</STATUS>
+      <FUNCTION>PF02</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>ZASP</STATUS>
+      <FUNCTION>RW</FUNCTION>
+     </RSMPE_STAF>
+    </SET>
+    <DOC>
+     <RSMPE_ATRT>
+      <OBJ_TYPE>A</OBJ_TYPE>
+      <OBJ_CODE>0001</OBJ_CODE>
+      <MODAL>D</MODAL>
+     </RSMPE_ATRT>
+     <RSMPE_ATRT>
+      <OBJ_TYPE>P</OBJ_TYPE>
+      <OBJ_CODE>ZAS1</OBJ_CODE>
+      <MODAL>P</MODAL>
+     </RSMPE_ATRT>
+     <RSMPE_ATRT>
+      <OBJ_TYPE>P</OBJ_TYPE>
+      <OBJ_CODE>ZASP</OBJ_CODE>
+      <MODAL>P</MODAL>
+     </RSMPE_ATRT>
+    </DOC>
+    <TIT>
+     <RSMPE_TITT>
+      <CODE>ZAS</CODE>
+      <TEXT>Display Work Schedules</TEXT>
+     </RSMPE_TITT>
+    </TIT>
+   </CUA>
+   <TPOOL>
+    <item>
+     <ID>H</ID>
+     <KEY>001</KEY>
+     <ENTRY>                                             #Empl&apos;s      Jan       Feb       Mar       Apr       May       Jun       Jul       Aug       Sep       Oct       Nov       Dec</ENTRY>
+     <LENGTH>171</LENGTH>
+    </item>
+    <item>
+     <ID>R</ID>
+     <ENTRY>Crewing Plan</ENTRY>
+     <LENGTH>12</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>OVT_FACT</KEY>
+     <ENTRY>Estimated % Overtime</ENTRY>
+     <LENGTH>28</LENGTH>
+    </item>
+   </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>R</ID>
+       <ENTRY>Arbeitszeitpläne anzeigen</ENTRY>
+       <LENGTH>25</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>ZPCREW00</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0004</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00064</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZPCREW00</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00004</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;DESCRIPTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Dieser Report gibt einen Überblick über Monatsarbeitszeitpläne.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Beim Start kann die Selektion durch bestimmte Auswahlkri-</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>terien eingeschränkt werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Die Anzeige der Monatsarbeitszeitpläne erfolgt ähnlich wie bei der</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Transaktion PT01.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Zusätzlich wird zu jedem selektierten Tagesarbeitszeitplan folgende</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Information ausgegeben: die Variante, der Beginn und das Ende</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>der Sollarbeitszeit, die Sollarbeitsstunden und die Pausen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/*</TDFORMAT>
+       <TDLINE>BEGIN OF UPDATE</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Select-Option FEIERTM</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Feiertagskalenderschlüssel</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;DEFINITION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/*</TDFORMAT>
+       <TDLINE>.INC=DOMOFID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Der Feiertagskalenderschlüssel legt fest, welcher Feiertagskalender bei</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>der Generierung des Monatsarbeitszeitplans heranzuziehen ist.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Der Feiertagskalenderschlüssel wird in der Tabelle T001P pro Personal-</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>bereich/Personalteilbereich vereinbart. Mit diesem Schlüssel</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>hat man zum einen die Möglichkeit, verschiedene</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Personalbereichs-/Personalteilbereichskombinationen auf einen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Feiertagskalender zurückzuführen. Zum anderen kann man</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>innerhalb eines Personalbereichs unterschiedliche</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Feiertagskalender zur Generierung der Monatsarbeitszeitplänen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>nutzen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>LZ</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Beispiele:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>LZ</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Die Geschäftsstellen Walldorf und Stuttgart haben die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>gleichen Feiertage. Deshalb ist es nicht nötig, für</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>jede Geschäftsstelle einen eigenen Feiertagskalender</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>anzulegen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>Genauso ist es aber möglich, innerhalb eines Personalbereichs</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>über diesen Schlüssel lokale Feiertage</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>abzulegen (z.B. Augsburger Friedensfest).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Über den Personalteilbereich können Sie beispielsweise</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Außendienstmitarbeitern, die im gleichen Personalbereich</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>angestellt sind, aber in Bezirken mit unterschiedlichen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Feiertagen arbeiten, eigene Feiertagskalenderschlüssel zuordnen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Select-Option SCHICHTM</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Gruppierung der Personalteilbereiche für Arbeitszeitpläne</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;DEFINITION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/*</TDFORMAT>
+       <TDLINE>.INC=DOMOSID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Diese Gruppierung wird zusammen mit der Feiertags-ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>(T001P-MOFID) zur Generierung der Monatsarbeitszeitpläne herangezogen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Mittels dieser Gruppierung ist es möglich, innerhalb eines</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Feiertagskalenders verschiedene organisatorische Gruppen von</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Monatsarbeitszeitplänen zu definieren.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>LZ</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Bsp.: Die Planung der Monatsarbeitszeitpläne wird für die Personal-</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>      bereiche 0001 und 0002 zusammen vorgenommen. Deshalb bietet es</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>      sich an, diesen beiden Personalbereichen die selbe Gruppierung</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>      für Arbeitszeitpläne zuzuweisen. Personalbereich 0003 plant in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>      eigener Regie. Deshalb wird ihm eine andere Gruppierung zuge-</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>      wiesen, damit er bei der Vergabe der Bezeichnungen der Monats-</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>      arbeitszeitpläne frei und eigenständig ist.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Select-Option ZEITTYP</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Gruppierung der Mitarbeiterkreise für Arbeitszeitpläne</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;DEFINITION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Gruppierungsmöglichkeit der einzelnen Mitarbeitergruppen und</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Mitarbeiterkreise im Rahmen der Zeiterfassung.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Diese Gruppierungen werden in der Tabelle 503 abgelegt.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Select-Option ZMODN</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Periodenarbeitszeitplan</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;DEFINITION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Ein Periodenarbeitszeitplan ist eine Folge von Tagesarbeitszeitplänen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>Er dient als Basis zur Generierung von Monatsarbeitszeitplänen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;DEPENDENCIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Der Periodenarbeitszeitplan wird gegen T508A geprüft.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>ZPCREW00</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0001</VERSION>
+      <TXTLINES>00057</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZPCREW00</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00001</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;DESCRIPTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>This report presents an overview of monthly work schedules.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>When you start the report, you can limit selection by means</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>of certain selection criteria.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>The monthly work schedule display is similar to</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>using transaction PT01.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>The System also displays the following information for each selected</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>daily work schedule: the variant, begin and end of planned working</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>time, planned working hours and breaks.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/*</TDFORMAT>
+       <TDLINE>BEGIN OF UPDATE</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Select option FEIERTM</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Public holiday calendar key</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;DEFINITION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/*</TDFORMAT>
+       <TDLINE>.INC=DOMOFID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The key determines which public holiday calendar should</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>apply when generating the monthly work schedule.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>The key is set in table T001P for each personnel area/personnel</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>subarea. This key gives you the option of basing different</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>combinations of personnel area/personnel subarea on one public</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>holiday calendar. Alternatively, you can use different public</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>holiday calendars to generate monthly work schedules within</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>one personnel area.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>LZ</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Examples:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>LZ</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>The branch offices in Walldorf und Stuttgart have the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>same public holidays. It is therefore unnecessary to create</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>an individual public holiday calendar for each branch.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>N1</TDFORMAT>
+       <TDLINE>You can also use this key to store local holidays</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>within one personnel area.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>You can assign individual public holiday calendar keys to field</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>sales employees who belong to the same personnel area, but work</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>in regions with different public holidays.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Select option SCHICHTM</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Personnel subarea grouping for work schedules</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;DEFINITION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/*</TDFORMAT>
+       <TDLINE>.INC=DOMOSID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>This grouping is used along with the public holiday ID</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>(T001P-MOFID) to generate monthly work schedules. You can</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>define different organizational groups of monthly work</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>schedules within one public holiday calendar.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>LZ</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Example: The planning of monthly work schedules is done for personnel</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>         areas 01 and 02 together. It is therefore logical to assign the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>         same grouping for work schedules to both personnel areas.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>         Personnel area 03 does its own planning. It is therefore</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>         assigned a different grouping to be entirely free and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>         independent when assigning monthly work schedule designations.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Select Option ZEITTYP</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Employee subgroup grouping for work schedules</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;DEFINITION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Possibility of grouping individual employee groups and</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>subgroups within time recording.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>These groupings are stored in table 503.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>Select option ZMODN</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Period work schedule</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;DEFINITION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>A period work schedule is a succession of daily work schedules.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>/</TDFORMAT>
+       <TDLINE>It is used as a basis for generating monthly work schedules.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U4</TDFORMAT>
+       <TDLINE>&amp;DEPENDENCIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The period work schedule is validated against table T508A.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

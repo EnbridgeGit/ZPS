@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_PLM_COR_CUSTOM_FIELDS</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Example Coding for Customer-Defined Fields</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>MR_ACTION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Project Planning: Projects</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MS_PLMT_AUDIT_ACT_UI</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Dialog Structure Corrective Action</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
